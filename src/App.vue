@@ -47,6 +47,7 @@ export default {
   methods: {
     setup(sketch) {
       sketch.createCanvas(this.width, this.height)
+      frameRate(120)
     },
     showdata(sketch){
       if (this.index==1){
@@ -83,7 +84,9 @@ export default {
     },
     draw(sketch) {
       sketch.background(220, 220, 220)
+      
       sketch.stroke(67,205,128)
+      sketch.strokeWeight(4)
       var previous_x = 0
       var previous_y = 2500-this.original_data["0"]
       for(var idx=1 ; idx<1680 ; idx++){
