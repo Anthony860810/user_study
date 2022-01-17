@@ -20,17 +20,21 @@
 
 <script>
 import VueP5 from "vue-p5"
-import file1 from './assets/1.json'
-import file2 from './assets/2.json'
-import file3 from './assets/3.json'
-import file4 from './assets/4.json'
-import file5 from './assets/5.json'
-import file6 from './assets/6.json'
-import file7 from './assets/7.json'
-import file8 from './assets/8.json'
-import file9 from './assets/9.json'
-import file10 from './assets/10.json'
-
+import file1 from './assets/4.json'
+import file2 from './assets/6.json'
+import file3 from './assets/15.json'
+import file4 from './assets/17.json'
+import file5 from './assets/24.json'
+import file6 from './assets/25.json'
+import file7 from './assets/33.json'
+import file8 from './assets/36.json'
+import file9 from './assets/49.json'
+import file10 from './assets/59.json'
+import file11 from './assets/66.json'
+import file12 from './assets/74.json'
+import file13 from './assets/81.json'
+import file14 from './assets/88.json'
+import file15 from './assets/91.json'
 export default {
   name: "p5-example",
   components: {
@@ -39,7 +43,7 @@ export default {
   data: () => ({
     width: 1800,
     height: 5000,
-    lines: [[], []],
+    lines: [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
     index: 0,
     original_data:file1,
     
@@ -47,10 +51,13 @@ export default {
   methods: {
     setup(sketch) {
       sketch.createCanvas(this.width, this.height)
-      frameRate(120)
+      frameRate(500000)
     },
     showdata(sketch){
-      if (this.index==1){
+      if (this.index==0){
+        this.original_data = file1
+      }
+      else if (this.index==1){
         this.original_data = file2
       }
       else if(this.index==2){
@@ -78,13 +85,25 @@ export default {
         this.original_data = file10
       }
       else if(this.index==10){
-        this.original_data = file3
+        this.original_data = file11
+      }
+      else if(this.index==11){
+        this.original_data = file12
+      }
+      else if(this.index==12){
+        this.original_data = file13
+      }
+      else if(this.index==13){
+        this.original_data = file14
+      }
+      else if(this.index==14){
+        this.original_data = file15
       }
 
     },
     draw(sketch) {
       sketch.background(220, 220, 220)
-      
+
       sketch.stroke(67,205,128)
       sketch.strokeWeight(4)
       var previous_x = 0
